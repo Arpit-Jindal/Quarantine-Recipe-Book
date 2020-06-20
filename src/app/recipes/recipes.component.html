@@ -1,0 +1,11 @@
+<div *ngIf="isLoading" style="text-align: center;">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+<div class="row" *ngIf="!isLoading">
+  <div class="col-md-5">
+    <app-recipe-list></app-recipe-list>
+  </div>
+  <div class="col-md-7">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+.quar {
+  font-size: 18pt;
+  font-weight: bold;
+}
+.rb {
+  margin-top: 2px;
+  text-align: center;
+  font-weight: bold;
+}
+.navbar-brand {
+  padding-top: 5px;
+  font-family: monospace;
+}
