@@ -15,9 +15,9 @@ export class RecipeListComponent implements OnInit, OnDestroy {
   private sub: Subscription;
   constructor(
     private recipeService: RecipeService,
+    private dataStorageService: DataStorageService,
     private route: ActivatedRoute,
-    private router: Router,
-    private dataStorageService: DataStorageService
+    private router: Router
   ) {}
 
   ngOnInit(): void {

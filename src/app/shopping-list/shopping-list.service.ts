@@ -9,7 +9,7 @@ export class ShoppingListService {
 
   private ingredients: Ingredient[] = [
     new Ingredient('Cottage Cheese', 5),
-    new Ingredient('Wheat Fluor', 10),
+    new Ingredient('Wheat Flour', 10),
   ];
 
   getIngredients() {

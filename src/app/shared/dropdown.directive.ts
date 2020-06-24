@@ -10,9 +10,14 @@ import {
 })
 export class DropdownDirective {
   @HostBinding('class.open') isOpen = false;
-  // @HostListener('click') toggleOpen() {
-  //   this.isOpen = !this.isOpen;
-  // }
+  constructor(private elRef: ElementRef) {}
+
+  // dropdown closed by just clicking the button
+  /*
+  @HostListener('click') toggleOpen() {
+    this.isOpen = !this.isOpen;
+  }
+  */
 
   //dropdown closed by a click anywhere outside
   @HostListener('document:click', ['$event']) toggleOpen(event: Event) {
@@ -20,5 +25,4 @@ export class DropdownDirective {
       ? !this.isOpen
       : false;
   }
-  constructor(private elRef: ElementRef) {}
 }

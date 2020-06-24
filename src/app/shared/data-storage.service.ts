@@ -19,7 +19,6 @@ export class DataStorageService implements OnDestroy {
       this.user = user;
     });
   }
-  ngOnInit() {}
   storeRecipes() {
     const recipes = this.recipesService.getRecipes();
     this.http

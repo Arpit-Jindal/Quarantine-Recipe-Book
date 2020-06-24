@@ -12,16 +12,14 @@ import { ShoppingListService } from '../shopping-list.service';
 })
 export class ShoppingEditComponent implements OnInit, OnDestroy {
   @ViewChild('f', { static: false }) slForm: NgForm;
-  subscription: Subscription;
+  private sub: Subscription;
   editMode = false;
   editedItemIndex: number;
   editedItem: Ingredient;
-  editedOnce = false; //for unsubscribing
   constructor(private slService: ShoppingListService) {}
 
   ngOnInit(): void {
     this.slService.startedEditing.subscribe((index: number) => {
-      this.editedOnce = true;
       this.editMode = true;
       this.editedItemIndex = index;
       this.editedItem = this.slService.getIngredient(index);
@@ -52,7 +50,6 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     this.slForm.reset();
   }
   ngOnDestroy() {
-    //TODO: fix - giving error on navigating to recipes
-    if (this.editedOnce) this.subscription.unsubscribe();
+    if (this.sub) this.sub.unsubscribe();
   }
 }
